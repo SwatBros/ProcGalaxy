@@ -24,12 +24,18 @@
     <ClCompile Include="PrintUtils.cpp">
       <Filter>File di origine</Filter>
     </ClCompile>
+    <ClCompile Include="StringGenerators.cpp">
+      <Filter>File di origine</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="System.h">
       <Filter>File di intestazione</Filter>
     </ClInclude>
     <ClInclude Include="PrintUtils.h">
+      <Filter>File di intestazione</Filter>
+    </ClInclude>
+    <ClInclude Include="StringGenerators.h">
       <Filter>File di intestazione</Filter>
     </ClInclude>
   </ItemGroup>

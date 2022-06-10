@@ -141,10 +141,12 @@
   <ItemGroup>
     <ClCompile Include="PrintUtils.cpp" />
     <ClCompile Include="ProcGalaxy.cpp" />
+    <ClCompile Include="StringGenerators.cpp" />
     <ClCompile Include="System.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="PrintUtils.h" />
+    <ClInclude Include="StringGenerators.h" />
     <ClInclude Include="System.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

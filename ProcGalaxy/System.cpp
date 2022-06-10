@@ -11,9 +11,8 @@ void Location::generate() {
 
 void System::printInfos() {
 	PrintUtils::printHeader();
-	PrintUtils::printTitle(type);
-	PrintUtils::printLine("Seed: " + std::to_string(seed));
-	PrintUtils::printLine("Name: " + std::to_string(name));
+	PrintUtils::printTitle(type + " - " + std::to_string(seed));
+	PrintUtils::printLine("Name: " + StringGenerators::title(name));
 }
 
 void System::generate(int seed) {
@@ -25,5 +24,5 @@ void System::generate(int seed) {
 	srand(seed);
 	this->seed = seed;
 
-	name = rand();
+	name = StringGenerators::randomName();
 }

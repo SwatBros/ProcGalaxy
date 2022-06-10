@@ -5,6 +5,7 @@
 #include <string>
 
 #include "PrintUtils.h"
+#include "StringGenerators.h"
 
 
 class Location {
@@ -20,7 +21,7 @@ class System : public Location {
 private:
 	std::string type = "System";
 	int seed = NULL;
-	int name = NULL;
+	std::string name = "";
 
 public:
 	System() {};
