@@ -62,12 +62,13 @@ void printActions() {
     PrintUtils::printHeader();
     PrintUtils::printTitle("Actions");
 
-    std::string actions[2][3] = {
-        {"z) Next", "x) Prev", "s) Seed"},
-        {"q) Quit", "", ""}
+    std::vector<std::vector<std::string>> actions{
+        {"z) Next", "x) Prev", "s) Seed"}
     };
 
     for (auto a : actions) {
-        PrintUtils::printTable(a, 3);
+        PrintUtils::printTable(a);
     }
+
+    PrintUtils::printLine("q) Quit");
 }

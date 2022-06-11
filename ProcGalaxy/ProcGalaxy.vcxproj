@@ -139,12 +139,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Location.cpp" />
     <ClCompile Include="PrintUtils.cpp" />
     <ClCompile Include="ProcGalaxy.cpp" />
     <ClCompile Include="StringGenerators.cpp" />
     <ClCompile Include="System.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Location.h" />
     <ClInclude Include="PrintUtils.h" />
     <ClInclude Include="StringGenerators.h" />
     <ClInclude Include="System.h" />

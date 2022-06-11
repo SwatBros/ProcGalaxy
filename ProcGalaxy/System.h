@@ -3,25 +3,20 @@
 
 #include <iostream>
 #include <string>
+#include <vector>
 
 #include "PrintUtils.h"
 #include "StringGenerators.h"
+#include "Location.h"
 
-
-class Location {
-protected:
-	std::string type = "Location";
-
-public:
-	virtual void printInfos();
-	virtual void generate();
-};
 
 class System : public Location {
 private:
 	std::string type = "System";
 	int seed = NULL;
 	std::string name = "";
+
+	unsigned int planet_number = 0;
 
 public:
 	System() {};
