@@ -14,7 +14,7 @@
 class System : public Location {
 private:
 	std::string type = "System";
-	int seed = rand();
+	int seed = NULL;
 	std::string name = "";
 
 	unsigned int planet_number = 0;
@@ -22,6 +22,11 @@ private:
 
 	bool handleInput(char& c);
 public:
+	System() {
+		srand(time(0));
+		seed = rand();
+	}
+
 	void printInfos();
 	void generate();
 	void printActions();

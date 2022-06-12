@@ -15,8 +15,6 @@
 void printActions();
 
 int main() {
-    srand(time(0));
-
     char c;
     System loc = System();
     loc.generate();
