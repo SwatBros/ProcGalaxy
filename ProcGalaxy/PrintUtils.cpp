@@ -1,7 +1,7 @@
 #include "PrintUtils.h"
 
 void PrintUtils::NotImplemented() {
-	std::cout << "Not Implemented\n";
+	printLine("Not Implemented");
 }
 
 void PrintUtils::printLine(std::string line) {
