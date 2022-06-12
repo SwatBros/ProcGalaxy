@@ -8,10 +8,16 @@
 class Location {
 protected:
 	std::string type = "Location";
+	Location* selected = this;
 
-public:
+	virtual bool handleInput(char& c);
 	virtual void printInfos();
+	virtual void printActions();
+public:
 	virtual void generate();
+	virtual void dispatchPrintInfos();
+	virtual void dispatchPrintActions();
+	virtual bool dispatchInput(char& c);
 };
 
 #endif

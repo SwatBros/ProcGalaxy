@@ -140,6 +140,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Location.cpp" />
+    <ClCompile Include="Planet.cpp" />
     <ClCompile Include="PrintUtils.cpp" />
     <ClCompile Include="ProcGalaxy.cpp" />
     <ClCompile Include="StringGenerators.cpp" />
@@ -147,6 +148,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Location.h" />
+    <ClInclude Include="Planet.h" />
     <ClInclude Include="PrintUtils.h" />
     <ClInclude Include="StringGenerators.h" />
     <ClInclude Include="System.h" />
