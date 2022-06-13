@@ -12,19 +12,52 @@ void System::printInfos() {
 	PrintUtils::printHeader();
 
 	PrintUtils::printLine(" ---");
-	std::vector<std::string> cols;
-	cols.push_back("-   -");
+	std::vector<std::string> cols0;
+	cols0.push_back("-   -");
 	for (int i = 0; i < planet_number; i++) {
-		cols.push_back("o");
+		cols0.push_back("o");
 	}
-	PrintUtils::printTable(cols);
-	PrintUtils::printLine(" ---");
+	PrintUtils::printTable(cols0);
+
+	bool inserted = false;
+	int h = 0;
+	do {
+		inserted = false;
+		std::vector<std::string> cols;
+		if (h == 0) {
+			cols.push_back(" ---");
+		}
+		else {
+			cols.push_back("");
+		}
+
+		for (auto p : planets) {
+			if (h < p.getMoonNumber()) {
+				cols.push_back(".");
+				inserted = true;
+			}
+			else {
+				cols.push_back("");
+			}
+		}
+
+		//Print only if its not empty
+		//or it is the first line
+		if (h == 0 || inserted) {
+			PrintUtils::printTable(cols);
+		}
+
+		cols.clear();
+
+		h += 1;
+	} while (inserted);
 }
 
 void System::generate() {
 	name = StringGenerators::randomName();
 	planet_number = rand() % 10;
 
+	planets.clear();
 	for (int i = 0; i < planet_number; i++) {
 		Planet p = Planet();
 		p.generate();
