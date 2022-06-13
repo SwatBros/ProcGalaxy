@@ -17,7 +17,6 @@ void printActions();
 int main() {
     char c;
     System loc = System();
-    loc.generate();
 
     do {
         system("cls || CLEAR");
@@ -33,9 +32,7 @@ int main() {
 
         c = _getch();
 
-        if (loc.dispatchInput(c)) {
-            loc.generate();
-        }
+        loc.dispatchInput(c);
 
         Sleep(100);
     } while (c != 'q');

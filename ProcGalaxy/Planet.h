@@ -14,9 +14,12 @@ private:
 	std::string type = "Planet";
 	std::string name = "";
 
+
+	void printInfos();
+	void printActions();
+	void handleInput(char& c);
 public:
 	void generate();
-	void printInfos();
 };
 
 #endif

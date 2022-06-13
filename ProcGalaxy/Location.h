@@ -8,16 +8,20 @@
 class Location {
 protected:
 	std::string type = "Location";
+	Location* owner = nullptr;
 	Location* selected = this;
 
-	virtual bool handleInput(char& c);
+	virtual void handleInput(char& c);
 	virtual void printInfos();
 	virtual void printActions();
 public:
 	virtual void generate();
 	virtual void dispatchPrintInfos();
 	virtual void dispatchPrintActions();
-	virtual bool dispatchInput(char& c);
+	virtual void dispatchInput(char& c);
+
+	virtual void setOwner(Location* o);
+	virtual void deselect();
 };
 
 #endif

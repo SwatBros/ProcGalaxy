@@ -1,5 +1,10 @@
 #include "System.h"
 
+System::System() {
+	srand(time(0));
+	setSeed(rand());
+}
+
 void System::printInfos() {
 	PrintUtils::printHeader();
 	PrintUtils::printTitle(type + " - " + std::to_string(seed));
@@ -23,6 +28,7 @@ void System::generate() {
 	for (int i = 0; i < planet_number; i++) {
 		Planet p = Planet();
 		p.generate();
+		p.setOwner(this);
 		planets.push_back(p);
 	}
 }
@@ -38,33 +44,33 @@ void System::printActions() {
 	}
 }
 
-bool System::handleInput(char& c) {
-	bool res = false;
-
+void System::handleInput(char& c) {
 	switch (c) {
 	case 'z':
-		seed--;
-		res = true;
+		setSeed(seed - 1);
 		break;
 
 	case 'x':
-		seed++;
-		res = true;
+		setSeed(seed + 1);
 		break;
 
 	case 's':
+	{
+		int s = NULL;
 		std::cout << "Seed: ";
-		std::cin >> seed;
+		std::cin >> s;
 
 		if (std::cin.fail()) {
 			std::cin.clear();
 			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 		}
 
-		res = true;
+		setSeed(s);
 		break;
+	}
 
 	case 'p':
+	{
 		int index = -1;
 		std::cout << "Index: ";
 		std::cin >> index;
@@ -74,12 +80,17 @@ bool System::handleInput(char& c) {
 			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 		}
 
-		if (index >= 0 || index < planet_number) {
+		if (index >= 0 && index < planet_number) {
 			Planet* p = &planets.at(index);
 			selected = (Location*)p;
 		}
 		break;
 	}
+	}
+}
 
-	return res;
+void System::setSeed(int value) {
+	seed = value;
+	srand(seed);
+	generate();
 }

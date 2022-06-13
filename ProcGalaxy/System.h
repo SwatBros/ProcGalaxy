@@ -20,12 +20,11 @@ private:
 	unsigned int planet_number = 0;
 	std::vector<Planet> planets;
 
-	bool handleInput(char& c);
+	void handleInput(char& c);
+
+	void setSeed(int value);
 public:
-	System() {
-		srand(time(0));
-		seed = rand();
-	}
+	System();
 
 	void printInfos();
 	void generate();

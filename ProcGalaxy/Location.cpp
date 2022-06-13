@@ -12,19 +12,26 @@ void Location::printActions() {
 	PrintUtils::NotImplemented();
 }
 
-bool Location::dispatchInput(char& c) {
-	return selected->handleInput(c);
+void Location::dispatchInput(char& c) {
+	selected->handleInput(c);
 }
 
 void Location::dispatchPrintInfos() {
-	return selected->printInfos();
+	selected->printInfos();
 }
 
 void Location::dispatchPrintActions() {
-	return selected->printActions();
+	selected->printActions();
 }
 
-bool Location::handleInput(char& c) {
+void Location::handleInput(char& c) {
 	PrintUtils::NotImplemented();
-	return false;
+}
+
+void Location::setOwner(Location* o) {
+	owner = o;
+}
+
+void Location::deselect() {
+	selected = this;
 }
